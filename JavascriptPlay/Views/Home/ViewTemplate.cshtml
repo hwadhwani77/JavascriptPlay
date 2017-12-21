@@ -1,0 +1,27 @@
+﻿<div id="viewTemplate" style="display: none;padding:10px;background-color:#ffffe6;">
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4" style="border-right: 1px dashed gray;">
+                    <h4><strong>Contact Info</strong></h4>
+                    <p><strong>Name:</strong> {script.viewModel.name}</p>
+                    <p><strong>Username:</strong> {script.viewModel.username}</p>
+                    <p><strong>Email:</strong> {script.viewModel.email}</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4><strong>Address</strong></h4>
+                    <p style="line-height:70%;">{script.viewModel.address.street} {script.viewModel.address.suite}</p>
+                    <p style="line-height:70%;">{script.viewModel.address.city} {script.viewModel.address.zipcode}</p>  
+                    <p><strong>GeoLocation: </strong> {script.viewModel.address.geo.lat}, {script.viewModel.address.geo.lng}</p>                  
+                </div>
+                <div class="col-sm-4" style="border-left: 1px dashed gray;">
+                    <h4><strong>Company Info</strong></h4>
+                    <p><strong>Name:</strong> {script.viewModel.company.name}</p>
+                    <p><strong>Catchphrase:</strong> {script.viewModel.company.catchPhrase}</p>
+                    <p><strong>Website:</strong> {script.viewModel.website}</p>
+                </div>                
+            </div>
+
+        </div>
+    </div>
+</div>

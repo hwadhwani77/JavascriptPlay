@@ -1,0 +1,60 @@
+﻿<div id="editTemplate" style="display: none; padding: 10px; background-color: #ffffe6;">
+    <div class="container">
+        <form id="editForm" class="form-inline">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h4><strong>Contact Info</strong></h4>
+                        <p>
+                            <strong>Name:</strong>
+                            <input type="text" rv-value="script.editModel.name" class="form-control" id="name" required />
+                        </p>
+                        <p>
+                            <strong>Email:</strong>
+                            <input type="text" rv-value="script.editModel.email" class="form-control" id="email" required />
+                        </p>
+                        <p><strong>Username:</strong> {script.editModel.username} </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h4><strong>Address</strong></h4>
+                        <p>
+                            <strong>Street: </strong>
+                            <input type="text" rv-value="script.editModel.address.street" class="form-control" id="street" required />
+                        </p>
+                        <p>
+                            <strong>Suite: </strong>
+                            <input type="text" rv-value="script.editModel.address.suite" class="form-control" id="suite" required />
+                        </p>
+                        <p>
+                            <strong>City: </strong>
+                            <input type="text" rv-value="script.editModel.address.city" class="form-control" id="city" required />
+                        </p>
+                        <p>
+                            <strong>Zip: </strong>
+                            <input type="text" rv-value="script.editModel.address.zipcode" class="form-control" id="zip" required />
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h4><strong>Company Info</strong></h4>
+                        <p>
+                            <strong>Name: </strong>
+                            <input type="text" rv-value="script.editModel.company.name" class="form-control" id="cname" required />
+                        </p>
+                        <p>
+                            <strong>Catchphrase: </strong>
+                            <input type="text" rv-value="script.editModel.company.catchPhrase" class="form-control" id="cphrase" required />
+                        </p>
+                        <p>
+                            <strong>Website: </strong>
+                            <input type="text" rv-value="script.editModel.website" class="form-control" id="website" required />
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-default btn-primary" rv-on-click="events.updateEdit">Update</button>
+                    <button type="button" class="btn btn-default btn-danger" rv-on-click="events.cancelEdit">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

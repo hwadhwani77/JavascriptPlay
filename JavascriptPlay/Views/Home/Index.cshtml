@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>    
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/rivets.bundled.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/namespace.js"></script>
+    <script type="text/javascript" src="~/Scripts/Init/init.js"></script>
+    <script type="text/javascript" src="~/Scripts/Init/service.js"></script>
+    <script type="text/javascript" src="~/Scripts/Events/event.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqueryPlugin.js"></script>
+    <script type="text/javascript" src="~/Scripts/Utility/scriptPlay.utlity.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/Validation/EditValidation.js"></script>*@
+    <link rel="stylesheet" href="~/Content/Site.css" type="text/css" />
+</head>
+<body>
+    <div class="modal" id="modalPage" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" href="#">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="modal-header" class="modal-header">
+                    <h4 id="modalTitle" class="modal-title" style="text-align: center"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div id="modalMessage" style="display: block; text-align: center"></div>
+                        <center>
+                        <img id="modalActivityImage" style="display:block; height: 55px; margin-top: 15px" src="~/Content/Images/ajax-loader.gif" />
+                        <button id="modalButtonOk" type="button" class="btn btn-default btn-med" style="display:none; margin-top:20px;">OK</button>
+                        <div id="confirmButtons" style="display:none">
+                            <button id="btnModalConfirm" type="button" class="btn btn-success btn-med" style="margin-top:20px">Yes</button>
+                            <button id="btnModalCancel" type="button" class="btn btn-danger btn-med" style="margin-top:20px" data-dismiss="modal">No</button>
+                        </div>
+                    </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="name" style="display: none;">
+                <h3>Users</h3>
+                <table class="table table-hover table-bordered">
+                    <tr rv-each-data="script.second.data">
+                        <td style="max-width: 50px;">{ data.name}
+                        </td>
+                        <td>
+                            <div class="col=sm-12">
+                                <button type="button" class="btn btn-sm btnViewUser" rv-on-click="events.showTemplateView">View</button>
+                                <button type="button" class="btn btn-sm btn-warning" rv-on-click="events.hideTemplateView" style="display:none;">Close</button>
+                                <button type="button" class="btn btn-sm btn-success btnEditUser" rv-on-click="events.showTemplateEdit">Edit</button>                                
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                 @Html.Partial("ViewTemplate")
+                @Html.Partial("EditTemplate")
+            </div>
+        </div>
+    </div>   
+</body>
+<script type="text/javascript">
+    $(function () {
+        scriptPlay.app.init();
+    });
+</script>
+</html>
+
